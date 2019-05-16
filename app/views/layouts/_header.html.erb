@@ -13,17 +13,29 @@
 
   <div class="collapse navbar-collapse" id="expanded-menu">
     <ul class="nav navbar-nav">
+      <% if !user_signed_in? %>
         <li class="active">
           <%= link_to 'Nova Conta', new_user_path %>
         </li>
+      <% end %>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-
+      <% if !user_signed_in? %>
         <li>
-          <%= link_to 'Entrar', '#' %>
+          <%= link_to 'Entrar', entrar_path %>
         </li
-
+        <% else %>
+          <div>
+            <%= link_to 'Minha Pagina', current_user %>
+          </div>
+          <div>
+            <a href="#"><%= link_to 'Editar', current_user %></a>
+          </div>
+          <div>
+            <%= link_to 'Sair', sair_path, method: :delete %>
+          </div>
+        <% end %>
     </ul>
 
   </div>
