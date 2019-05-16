@@ -27,10 +27,10 @@
         </li
         <% else %>
           <div>
-            <%= link_to 'Minha Pagina', current_user %>
+            <%= link_to 'Minha Pagina', contacts_path %>
           </div>
           <div>
-            <a href="#"><%= link_to 'Editar', current_user %></a>
+            <a href="#"><%= link_to 'Editar', edit_user_path(current_user) %></a>
           </div>
           <div>
             <%= link_to 'Sair', sair_path, method: :delete %>
